@@ -1,7 +1,7 @@
 Shuup Static Build Tools
 ------------------------
 
-This lib provides utilities to build [Shuup](https://github.com/shuup/shuup) static sources using [Parcel Bundler](https://parceljs.org/).
+This package uses [Parcel](https://parceljs.org/) to compile JavaScript and LESS entry points for [Shuup](https://github.com/shuup/shuup) add-ons.
 
 ## Installation
 
@@ -11,7 +11,7 @@ $ npm i --save shuup-static-build-tools
 
 ## Usage
 
-Create a Node.js script to build files, example `build_resources.js`:
+Create a Node.js build script named `build_resources.js`.
 
 ```js
 const { getParcelBuildCommand, runBuildCommands } = require("shuup-static-build-tools");
@@ -30,25 +30,27 @@ runBuildCommands([
 ]);
 ```
 
-Add in your `packages.json`:
+Add these properties to your `package.json`.
 
 ```json
-"scripts": {
-    "watch": "node build_resources --watch",
-    "build": "node build_resources"
-},
-"shuup": {
+{
+  "scripts": {
+    "watch": "node build_resources.js --watch",
+    "build": "node build_resources.js"
+  },
+  "shuup": {
     "static_build": true
+  }
 }
 ```
 
-Now you can use Shuup static build tool to build your app alogn with all Shuup apps:
+Run the package's build script with `npm run build`, or build resources for all Shuup apps from the Shuup repository root.
 
 ```
 python setup.py build_resources
 ```
 
-Note: make sure to follow [Parcel Bundler](https://parceljs.org/) steps to install all the required addsons for transforming your code correctly.
+Install the [Parcel](https://parceljs.org/) transformers your entry points require.
 
 ## License
 
