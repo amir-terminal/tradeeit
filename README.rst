@@ -1,18 +1,9 @@
-.. image:: https://travis-ci.org/shuup/shuup.svg?branch=master
-    :target: https://travis-ci.org/shuup/shuup
-.. image:: https://coveralls.io/repos/github/shuup/shuup/badge.svg?branch=master
-   :target: https://coveralls.io/github/shuup/shuup?branch=master
-.. image:: https://img.shields.io/pypi/v/shuup.svg
-   :alt: PyPI
-   :target: https://github.com/shuup/shuup
-.. image:: https://snyk.io/test/github/shuup/shuup/badge.svg
-   :alt: Known Vulnerabilities
-   :target: https://snyk.io/test/github/shuup/shuup
-
 Shuup
 =====
 
-Shuup is an Open Source E-Commerce Platform based on Django and Python.
+This repository contains Shuup, an open-source e-commerce platform built with
+Django and Python. The project includes a storefront, an administration
+interface, and an add-on system.
 
 https://shuup.com/
 
@@ -54,16 +45,20 @@ We have a Gitter chat room for Shuup.  Come chat with us!  |Join chat|
 Docker quick start
 ------------------
 
-Fastest way to get Shuup up and running is to use `Docker <https://www.docker.com>`_.
+From the repository root, use `Docker <https://www.docker.com>`_ with the
+Compose plugin to start the demo. The bundled Dockerfile installs the published
+Shuup package by default. For local source development, see the development
+guide below.
 
 1. Run:
 
    .. code-block:: shell
 
-      docker-compose up
+      docker compose up --build
 
 2. Open `localhost:8000/sa <http://localhost:8000/sa>`_ in a browser,
-   log in with username: ``admin`` password: ``admin``
+   sign in with the demo credentials ``admin`` / ``admin``.
+   Use these credentials for local testing only.
 
 Full Shuup installation guide
 -----------------------------
@@ -107,8 +102,8 @@ modules, use command:
 
     ./generate_apidoc.py
 
-Roadmap
--------
+Historical upstream roadmap
+---------------------------
 
 v3 (Q4 2021)
 ###############
